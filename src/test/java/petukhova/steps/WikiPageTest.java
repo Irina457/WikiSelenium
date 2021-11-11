@@ -24,26 +24,26 @@ import static org.junit.Assert.assertTrue;
 public class WikiPageTest {
 
     @BeforeAll
-    public static void setBrowserConfig(){
+    public static void setBrowserConfig() {
         //зайдет в интернет, скачает образец драйвера
         Configuration.browser = "firefox";  //объявление браузера
         Configuration.startMaximized = true;    //максимального размера для окна
     }
 
     @Given("^I open wiki search page$")
-    public void openStartPage(){
+    public void openStartPage() {
         Selenide.open(WikiSearchPage.getBASE_URL());  //открыть теущую страницу
     }
 
     @Given("^I click the button")
-    public void clickButton(){
+    public void clickButton() {
         WikiSearchPage searchPage = new WikiSearchPage(); //создание экземпляра новой страницы
         searchPage.getSearchButton()    //поиск кнопки
                 .click();   //нажатие на кнопку
     }
 
     @Given("^I write text \"(.+)\" to search input$")
-    public void setTextToInput(String searchText){
+    public void setTextToInput(String searchText) {
         WikiSearchPage searchPage = new WikiSearchPage();
         searchPage.getSearchField()     //взять поля
                 .shouldBe(enabled, visible, empty)
@@ -51,14 +51,14 @@ public class WikiPageTest {
     }
 
     @And("^I click the button to search it")
-    public void clickToSearch(){
+    public void clickToSearch() {
         WikiSearchPage searchPage = new WikiSearchPage();
         searchPage.getSearchButton2()    //поиск кнопки
                 .click();   //нажатие на кнопку
     }
 
     @Then("Result page has count more than 1")
-    public void checkResult(){
+    public void checkResult() {
         WikiResultPage resultPage = new WikiResultPage();
         resultPage.getSearchInput()
                 .shouldBe(visible, enabled);
@@ -70,7 +70,7 @@ public class WikiPageTest {
     }
 
     @AfterAll
-    public static void closeAll(){
+    public static void closeAll() {
         Selenide.closeWebDriver();
     }
 
