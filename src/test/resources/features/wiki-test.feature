@@ -1,0 +1,12 @@
+#language: en
+
+  Feature: check wiki page
+
+  Background:
+    Given I open wiki search page
+
+  Scenario:
+  Then I click the button
+  Given I write text "Франция" to search input
+  And I click the button to search it
+  Then Result page has count more than 1
