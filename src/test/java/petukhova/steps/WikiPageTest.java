@@ -26,7 +26,7 @@ public class WikiPageTest {
     @BeforeAll
     public static void setBrowserConfig(){
         //зайдет в интернет, скачает образец драйвера
-        Configuration.browser = "chrome";  //объявление браузера
+        Configuration.browser = "firefox";  //объявление браузера
         Configuration.startMaximized = true;    //максимального размера для окна
     }
 
@@ -50,7 +50,7 @@ public class WikiPageTest {
                 .setValue(searchText);  //ввести нужный текст
     }
 
-    @And("I click the button to search it")
+    @And("^I click the button to search it")
     public void clickToSearch(){
         WikiSearchPage searchPage = new WikiSearchPage();
         searchPage.getSearchButton2()    //поиск кнопки

@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-        features = "src/test/resourсes/features",
-        glue = "petukhova.steps",
+        features = "C:\\Users\\а\\IdeaProjects\\WikiSelenium\\src\\test\\resources\\features",
+        glue = "petukhova/steps",
         plugin = "pretty"
 )
 

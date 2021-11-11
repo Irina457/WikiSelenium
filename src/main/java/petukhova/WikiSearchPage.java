@@ -18,6 +18,5 @@ public class WikiSearchPage {
     private final SelenideElement searchField = $(By.name("search"));   //найти окно поиска
     private final SelenideElement searchButton = $(By.name("go"));      //кнопка поиска
     private final SelenideElement searchButton2 = $(By.cssSelector("button.oo-ui-inputWidget-input"));  //кнопка Найти
-
 }
 
